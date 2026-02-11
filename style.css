@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    position: relative;
+}
+
+/* Fondo animado */
+.fondo-animado {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Corazones */
+.corazon {
+    position: absolute;
+    font-size: 25px;
+    color: rgba(255,255,255,0.4);
+    animation: flotar 12s linear infinite;
+}
+
+/* Fotos flotantes */
+.foto-flotante {
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 15px;
+    opacity: 0.3;
+    animation: flotar 18s linear infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Animación flotación */
+@keyframes flotar {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Contenedor */
+.contenedor {
+    position: relative;
+    z-index: 2;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 50px 30px;
+    border-radius: 25px;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+.mensaje {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+/* Botones */
+.botones {
+    margin-top: 20px;
+}
+
+.botones button {
+    padding: 15px 35px;
+    margin: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#si {
+    background: linear-gradient(45deg, #ff4b5c, #ff758c);
+    color: white;
+}
+
+#no {
+    background: white;
+    color: #ff4b5c;
+}
+
+/* Galería */
+.galeria {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* Tarjetas flip */
+.card {
+    width: 220px;
+    height: 270px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.card.flip .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.card-back {
+    background: linear-gradient(45deg, #ff4b5c, #ff758c);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transform: rotateY(180deg);
+    text-align: center;
+}

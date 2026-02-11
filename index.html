@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Puedo ser tu San Valentín? 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Fondo animado -->
+<div class="fondo-animado">
+
+    <!-- Corazones -->
+    <span class="corazon" style="left:10%; animation-delay:0s;">❤</span>
+    <span class="corazon" style="left:25%; animation-delay:3s;">❤</span>
+    <span class="corazon" style="left:40%; animation-delay:6s;">💕</span>
+    <span class="corazon" style="left:60%; animation-delay:2s;">❤</span>
+    <span class="corazon" style="left:75%; animation-delay:5s;">💕</span>
+    <span class="corazon" style="left:90%; animation-delay:8s;">❤</span>
+
+    <!-- Mini fotos flotando -->
+    <img src="fotos/foto4.jpeg" class="foto-flotante" style="left:15%; animation-delay:2s;">
+    <img src="fotos/foto5.jpeg" class="foto-flotante" style="left:30%; animation-delay:7s;">
+    <img src="fotos/foto6.jpeg" class="foto-flotante" style="left:45%; animation-delay:4s;">
+    <img src="fotos/foto7.jpeg" class="foto-flotante" style="left:70%; animation-delay:2s;">
+    <img src="fotos/foto8.jpeg" class="foto-flotante" style="left:65%; animation-delay:7s;">
+    <img src="fotos/foto9.jpeg" class="foto-flotante" style="left:80%; animation-delay:4s;">
+    <img src="fotos/foto10.jpeg" class="foto-flotante" style="left:95%; animation-delay:2s;">
+    <img src="fotos/foto11.jpeg" class="foto-flotante" style="left:5%; animation-delay:7s;">
+    <img src="fotos/foto12.jpeg" class="foto-flotante" style="left:23%; animation-delay:4s;">
+    <img src="fotos/foto13.jpeg" class="foto-flotante" style="left:55%; animation-delay:2s;">
+    <img src="fotos/foto14.jpeg" class="foto-flotante" style="left:85%; animation-delay:7s;">
+    <img src="fotos/foto15.jpeg" class="foto-flotante" style="left:35%; animation-delay:4s;">
+
+</div>
+
+<div class="contenedor">
+    <h1>Para la mujer mas fuerte del universo. El amor de mi vida.</h1>
+
+    <p class="mensaje">
+        Hace 11 años conoceria al amor de mi vida.
+        Yo siendo un morrito todo mequito, y tu, siendo la reina que flecharia mi corazon 💖.
+        Siempre seras el amor de mi vida, desde los 12 años, hemos vivido muchas cosas juntos
+        y deseo con todo el alma seguir viviendo toda la eternidad a tu lado.
+        Te amo mucho mi niña hermosa, mi mujer fuerte, mi guerrera, mi soporte de vida, mi razon de vivir,
+        mi todoooo. Eres absolutamente la mujer quer quiero en toda mi vida, y te dare absolutamento todoooo de mi,
+        todoooo, toda mi alma te pertenece a ti,TE AMO MUCHISIMOOOOO CORAZON MIOOOOOO.
+    </p>
+
+    <h2>¿Puedo ser tu San Valentín? 💌</h2>
+
+    <div class="botones">
+        <button id="si">¡Sí!</button>
+        <button id="no">No</button>
+    </div>
+
+    <!-- Galería -->
+    <div class="galeria">
+
+        <div class="card" onclick="this.classList.toggle('flip')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="fotos/foto1.jpeg">
+                </div>
+                <div class="card-back">
+                    <p>Cuando estabamos peques, tu bien hermosa y yo siendo yo🥹</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" onclick="this.classList.toggle('flip')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="fotos/foto2.jpeg">
+                </div>
+                <div class="card-back">
+                    <p>Nosotros saliendo de la secu jeje, bien peques, pero bien guapos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" onclick="this.classList.toggle('flip')">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="fotos/foto3.jpeg">
+                </div>
+                <div class="card-back">
+                    <p>En la uni, siendo personas adultas. Siempre seras el amor de mi vida, siempre. Quiero ser tu hombre por toda la vida y estar toda la eternidad juntos.❤️</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const botonSi = document.getElementById("si");
+const botonNo = document.getElementById("no");
+
+let escalaSi = 1;
+let escalaNo = 1;
+
+botonNo.addEventListener("click", function() {
+    escalaSi += 0.2;
+    escalaNo -= 0.1;
+
+    if (escalaNo <= 0.3) {
+        escalaNo = 0.3;
+    }
+
+    botonSi.style.transform = `scale(${escalaSi})`;
+    botonNo.style.transform = `scale(${escalaNo})`;
+});
+
+botonSi.addEventListener("click", function() {
+    alert("Sabía que dirías que sí 😍💖 Te amo muchísimo ❤️");
+});
+</script>
+
+</body>
+</html>
